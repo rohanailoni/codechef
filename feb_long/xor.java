@@ -87,22 +87,38 @@ class Solution{
 					continue;
 				}
 				if(n%2==0){
-					
-					if(zero==one){
+					if(one%2==0 && zero%2==0){
+						out.println("YES");
+					}
+					else if(zero==one){
 						out.println("YES");
 					}else{
 						out.println("NO");
 					}
 				}else{
-					if(zero==one-1){
-						out.println("YES");
-					}else if(zero-1==one){
+					if (one > zero)
+					{
+						if ((one - zero) % 2 == 1)
+						{
+							out.println("YES");
+						}
+						else
+						{
+							out.println("No");
+						}
+					}
+				else
+				{
+					if ((zero - one) % 2 == 1)
+					{
 						out.println("YES");
 					}
 					else{
-						out.println("NO");
+						out.println("YES");
 					}
 				}
+			}
+
             }
             out.close();
         } catch (Exception e) {
