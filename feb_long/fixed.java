@@ -70,8 +70,19 @@ public class Solution{
             FastWriter out = new FastWriter();
             int testCases=in.nextInt();
             while(testCases-- > 0){
-                // write code here
-            }
+				int n=Integer.parseInt(in.nextLine());
+				int[] arr=string_to_array(in.nextLine().split(" "));
+				int ans=0;
+				for(int i=0;i<arr.length;i++){
+					if(arr[i]!=ans+i+1){
+						continue;
+					}else{
+						ans++;
+					}
+				}
+				out.println(ans);
+			}
+
             out.close();
         } catch (Exception e) {
             return;
