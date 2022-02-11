@@ -71,6 +71,19 @@ public class Solution{
             int testCases=in.nextInt();
             while(testCases-- > 0){
                 // write code here
+				int[] arr=string_to_array(in.nextLine().split(" "));
+				int a=arr[0];
+				int b=arr[1];
+				int x=arr[2];
+				int y=arr[3];
+				int req=a*b;
+				int has=x*y;
+				if(has>=req){
+					out.println("YES");
+				}else{
+					out.println("NO");
+				}
+                
             }
             out.close();
         } catch (Exception e) {
