@@ -70,20 +70,30 @@ import java.io.*;
             FastWriter out = new FastWriter();
             int testCases=in.nextInt();
             while(testCases-- > 0){
-                // write code here
-				int[] arr=string_to_array(in.nextLine().split(" "));
-				int a=arr[0];
-				int b=arr[1];
-				int x=arr[2];
-				int y=arr[3];
-				int req=a*b;
-				int has=x*y;
-				if(has>=req){
-					out.println("YES");
-				}else{
-					out.println("NO");
-				}
-		
+		             // write code here
+					 int x=Integer.parseInt(in.nextLine());
+					 String s=in.nextLine();
+					 int sc_chef=0;
+					 int sc_cha=0;
+					 for(int i=0;i<s.length();i++){
+						 if(s.charAt(i)=='N'){
+							sc_chef+=2;
+						 }else if(s.charAt(i)=='C'){
+							 sc_cha+=2;
+						 }else{
+							 sc_cha++;
+							 sc_chef++;
+						 }
+					 
+					 }
+					 if(sc_cha>sc_chef){
+						 out.println(x*60);
+					 }else if(sc_chef>sc_cha){
+						 out.println(x*40);
+					 }else{
+						 out.println(x*55);
+					 }
+	
             }
             out.close();
         } catch (Exception e) {
